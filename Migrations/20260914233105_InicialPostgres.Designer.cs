@@ -12,8 +12,8 @@ using PokemonTCGStore.API.Data;
 namespace PokemonTCGStore.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260908033758_InicialCreate")]
-    partial class InicialCreate
+    [Migration("20260914233105_InicialPostgres")]
+    partial class InicialPostgres
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -58,6 +58,14 @@ namespace PokemonTCGStore.API.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ilustrador")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImagenUrl")
                         .IsRequired()
