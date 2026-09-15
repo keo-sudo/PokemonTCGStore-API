@@ -9,7 +9,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("PermitirFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:5173")
+        policy.WithOrigins(
+                "http://localhost:5173",
+                "https://pokemon-tcg-store-frontend.vercel.app"
+              )
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
