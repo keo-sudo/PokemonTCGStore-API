@@ -11,7 +11,8 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins(
                 "http://localhost:5173",
-                "https://pokemon-tcg-store-frontend.vercel.app"
+                "https://pokemon-tcg-store-frontend.vercel.app",
+                "https://pokemontcg-store.vercel.app"
               )
               .AllowAnyHeader()
               .AllowAnyMethod();
